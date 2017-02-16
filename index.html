@@ -60,7 +60,7 @@
 
 		<!-- Signup Form -->
 			<form id="signup-form" method="post" action="#">
-				<input type="email" name="email" id="email" placeholder="Email Address" />
+				<input type="email" name="email" id="email-input" placeholder="Email Address" />
 				<input id="signup-input" type="submit" value="Sign Up" />
 			</form>
 
@@ -203,12 +203,23 @@
        $('#regenerate-btn').click();
 
        $(document).on('click', '#signup-input', function() {
+         $.ajax({
+           url: 'https://www.nooma.tv/teacher_applications',
+           method: 'post',
+           data: {
+             name: 'noomaio',
+             email: $('#email-input').val()
+           }
+         }).done(function(res) {
+           console.log(res);
+         });
          $('line').css('stroke', 'pink');
        });
 
        window.setInterval(function(){
          $('#regenerate-btn').click();
        }, 5000);
+
       </script>
 
 	</body>
