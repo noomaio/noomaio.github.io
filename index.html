@@ -24,7 +24,7 @@
 
 
     <style>
-     #header {
+     #header, form {
        z-index: 9999;
      }
 
@@ -34,10 +34,8 @@
 
      #chart {
        position: absolute;
-       right: 20px;
-       left: 70%;
-       -webkit-transform: translateX(-50%);
-       transform: translateX(-50%)
+       right: 0;
+       bottom: 0;
      }
 
      line {
@@ -47,6 +45,10 @@
      #signup-input {
        background-color: #41D07A;
      }
+
+     html, body {
+       overflow: hidden;
+     }
     </style>
 
 	</head>
@@ -55,7 +57,7 @@
 		<!-- Header -->
 			<header id="header">
 				<h1>Immortalize yourself</h1>
-				<p>Let your soul live on forever. Join the waitlist.</p>
+				<p>Let your soul live on. Join the waitlist.</p>
 			</header>
 
 		<!-- Signup Form -->
