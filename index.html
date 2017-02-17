@@ -204,10 +204,17 @@
          $('line').css('stroke', 'pink');
        });
 
-       window.setInterval(function(){
-         $('#regenerate-btn').click();
-       }, 5000);
+       var maxClicks = 30;
+       var clickCount = 0;
 
+       var updateUI = window.setInterval(function(){
+         if(clickCount < maxClicks) {
+           $('#regenerate-btn').click();
+           clickCount++;
+         } else {
+           clearInterval(updateUI);
+         }
+       }, 5000);
       </script>
 
 	</body>
